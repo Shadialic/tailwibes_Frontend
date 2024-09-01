@@ -38,8 +38,6 @@ function StudentList() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const selector = useSelector((state) => state.tutor.tutorInfo);
-  console.log(selector,'ss');
-  
   const fetchStudents = async () => {
     try {
       setLoading(true);
