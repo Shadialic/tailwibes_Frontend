@@ -81,7 +81,7 @@ function EditStudent({ fullName, subject, mark, id, fetchStudents }) {
 
   return (
     <>
-      <Tooltip title="Edit User">
+      <Tooltip title="Edit Student">
         <IconButton
           color="#0000000"
           sx={{
@@ -93,6 +93,7 @@ function EditStudent({ fullName, subject, mark, id, fetchStudents }) {
             transition: "transform 0.3s ease-in-out",
             "&:hover": {
               transform: "scale(1.05)",
+              color:"#467ee7"
             },
           }}
           onClick={handleOpen}

@@ -54,8 +54,9 @@ function LoginForm() {
     if (validate()) {
       try {
         const response = await LoginTeacher(formData);
-        console.log(response, "dd");
         if (response.status) {
+          const { token } = response;
+          localStorage.setItem("token", token);
           dispatch(
             setTutorDetailes({
               id: response.Data._id,
@@ -65,7 +66,7 @@ function LoginForm() {
               role: "tutor",
             })
           );
-          localStorage.setItem("token", response.token);
+         
           handleClear();
           toast.success(response.message);
           navigate("/");
@@ -110,7 +111,7 @@ function LoginForm() {
             fontSize: "2rem",
           }}
         >
-          tailwibes.
+          tailwebs.
         </Typography>
         <Box
           sx={{
@@ -126,7 +127,6 @@ function LoginForm() {
           />
         </Box>
       </Box>
-
       <Box
         width={{ xs: "100%", sm: "100%", md: "50%" }}
         mt={{ sm: 8, md: 10 }}
@@ -141,7 +141,6 @@ function LoginForm() {
             </Typography>
             <Divider sx={{ width: "25%" }} />
           </Box>
-
           <Box
             display="flex"
             justifyContent="flex-end"
@@ -156,7 +155,6 @@ function LoginForm() {
               Clear
             </Button>
           </Box>
-
           <Box
             display="flex"
             flexDirection="column"

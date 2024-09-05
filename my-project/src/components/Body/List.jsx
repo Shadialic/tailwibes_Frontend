@@ -42,6 +42,8 @@ function StudentList() {
     try {
       setLoading(true);
       const response = await getStudents(selector.id);
+      console.log(response,'response');
+      
       setStudents(response.students);
     } catch (error) {
       console.error("Failed to fetch students:", error);
@@ -83,9 +85,10 @@ function StudentList() {
     } catch (error) {
       console.error("Failed to search students:", error);
     }
-  }, 100);
+  },50);
 
   useEffect(() => {
+    
     if (search) {
       searchStudent(search);
     } else {
@@ -286,7 +289,7 @@ function StudentList() {
                                 id={student._id}
                                 fetchStudents={fetchStudents}
                               />
-                              <Tooltip title="Delete User">
+                              <Tooltip title="Delete Student">
                                 <IconButton
                                   color="error"
                                   sx={{
@@ -298,6 +301,8 @@ function StudentList() {
                                     transition: "transform 0.3s ease-in-out",
                                     "&:hover": {
                                       transform: "scale(1.05)",
+                                    color: "#de2323",
+
                                     },
                                   }}
                                   onClick={() => handleDeleteById(student._id)}

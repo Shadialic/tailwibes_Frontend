@@ -104,7 +104,7 @@ function RegistrationForm() {
             fontSize: "2rem",
           }}
         >
-          tailwibes.
+          tailwebs.
         </Typography>
         <Box
           sx={{
@@ -129,7 +129,6 @@ function RegistrationForm() {
             </Typography>
             <Divider sx={{ width: "25%" }} />
           </Box>
-
           <Box
             display="flex"
             justifyContent="flex-end"
@@ -144,7 +143,6 @@ function RegistrationForm() {
               Clear
             </Button>
           </Box>
-
           <Box
             display="flex"
             flexDirection="column"
@@ -185,7 +183,7 @@ function RegistrationForm() {
               sx={{ mb: 2 }}
               error={!!errors.lastName}
               helperText={errors.lastName}
-            />
+            />          
             <Typography variant="body1" sx={{ fontWeight: "bold" }}>
               Email
             </Typography>

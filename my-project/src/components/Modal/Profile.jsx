@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import {
@@ -11,8 +11,10 @@ import {
   Typography,
 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { logoutDetails } from "../../redux/slice/TutorSlice";
 
 const Profile = () => {
+  const dispatch=useDispatch()
   const navigate = useNavigate();
   const selector = useSelector((state) => state.tutor.tutorInfo);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -24,6 +26,7 @@ const Profile = () => {
   };
   const handleLogout = () => {
     localStorage.removeItem("token");
+    dispatch(logoutDetails())
     toast.success("Logging out Successfully!");
     setTimeout(() => {
       navigate("/login");

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Profile from "../Modal/Profile";
 
 function NavBar() {
@@ -33,7 +33,7 @@ function NavBar() {
             flex: "1 1 auto",
           }}
         >
-          tailwibes.
+          tailwebs.
         </Typography>
       </Box>
       <Box sx={{ display: "flex", alignItems: "center" }}>
